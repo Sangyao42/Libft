@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 12:20:44 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/13 18:02:30 by sawang           ###   ########.fr       */
+/*   Created: 2022/10/13 18:51:38 by sawang            #+#    #+#             */
+/*   Updated: 2022/10/13 20:17:55 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+void	ft_bzero(void *s, unsigned long n)
 {
-	if (c > (9 + 48) || c < (0 + 48))
-		return (0);
-	else
-		return (1);
+	unsigned long	i;
+	unsigned char	*c;
+
+	*c = s;
+	i = 0;
+	while (s && i < n)
+	{
+		c[i] = '\0';
+		i++;
+	}
 }

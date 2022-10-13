@@ -6,13 +6,13 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 18:04:57 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/11 18:17:14 by sawang           ###   ########.fr       */
+/*   Updated: 2022/10/13 18:49:26 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+unsigned long	ft_strlen(char *str)
 {
-	int	i;
+	unsigned long	i;
 
 	i = 0;
 	while (*(str + i) != '\0')
