@@ -6,9 +6,11 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 15:17:15 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/13 18:06:52 by sawang           ###   ########.fr       */
+/*   Updated: 2022/10/14 22:01:12 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 unsigned long	ft_strlcat(char *dst, const char *src, unsigned long dstsize)
 {
@@ -17,9 +19,12 @@ unsigned long	ft_strlcat(char *dst, const char *src, unsigned long dstsize)
 	unsigned long	i;
 
 	dstlen = 0;
+	srclen = 0;
 	i = 0;
 	while (dst[dstlen] != '\0')
 		dstlen++;
+	while (src[srclen] != '\0')
+		srclen++;
 	if (dstsize != 0 && dstlen <= dstsize)
 	{
 		while (src[i] != '\0' && i < (dstsize - dstlen - 1))
@@ -28,8 +33,9 @@ unsigned long	ft_strlcat(char *dst, const char *src, unsigned long dstsize)
 			i++;
 		}
 		dst[dstlen + i] = '\0';
+		return (dstlen + srclen);
 	}
-	return (dstlen + i - 1);
+	return (dstsize + srclen);
 }
 
 //size_t	strlcat(char * restrict dst, const char * restrict src, size_t dstsize)

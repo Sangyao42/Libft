@@ -6,11 +6,11 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:17:47 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/13 18:49:18 by sawang           ###   ########.fr       */
+/*   Updated: 2022/10/14 18:54:06 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned long	ft_strlen(char *str)
+/*unsigned long	ft_strlen(char *str)
 {
 	unsigned long	i;
 
@@ -39,7 +39,10 @@ int	ft_strncmp(char *s1, char *s2, unsigned long n)
 		i++;
 	}
 	return (ret_val);
-}
+}*/
+
+unsigned long	ft_strlen(char *str);
+int				ft_strncmp(char *s1, char *s2, unsigned long n);
 
 char	*strnstr(const char *haystack, const char *needle, unsigned long len)
 {

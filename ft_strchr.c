@@ -6,19 +6,11 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 18:18:06 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/11 19:09:21 by sawang           ###   ########.fr       */
+/*   Updated: 2022/10/14 22:03:05 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
+int	ft_strlen(char *str);
 
 char	*ft_strchr(const char *s, int c)
 {
