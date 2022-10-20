@@ -6,27 +6,29 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:26:30 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/13 18:06:49 by sawang           ###   ########.fr       */
+/*   Updated: 2022/10/18 18:38:54 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned long	ft_strlcpy(char *dest, char *src, unsigned long dessize)
+#include "libft.h"
+
+size_t	ft_strlcpy(char *dest, const char *src, size_t dessize)
 {
-	unsigned long	src_len;
-	unsigned long	j;
+	size_t	src_len;
+	size_t	i;
 
 	src_len = 0;
-	j = 0;
+	i = 0;
 	while (src[src_len] != '\0')
 		src_len++;
 	if (dessize != 0)
 	{
-		while (src[j] != '\0' && j < dessize -1)
+		while (src[i] != '\0' && i < dessize -1)
 		{
-			dest[j] = src[j];
-			j++;
+			dest[i] = src[i];
+			i++;
 		}
-		dest[j] = '\0';
+		dest[i] = '\0';
 	}
 	return (src_len);
 }

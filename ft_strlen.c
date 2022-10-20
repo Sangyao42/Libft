@@ -6,13 +6,15 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 18:04:57 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/14 18:37:54 by sawang           ###   ########.fr       */
+/*   Updated: 2022/10/18 16:52:44 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned long	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
-	unsigned long	i;
+	size_t	i;
 
 	i = 0;
 	while (*(str + i) != '\0')

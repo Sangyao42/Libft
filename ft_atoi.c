@@ -6,9 +6,11 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:00:54 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/13 18:01:39 by sawang           ###   ########.fr       */
+/*   Updated: 2022/10/19 18:37:03 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	is_non_space(const char c)
 {
@@ -35,13 +37,14 @@ int	ft_atoi(const char *str)
 	sign = 1;
 	while (is_non_space(*str) == 1)
 		str = str + 1;
-	if (*str == '-')
+	if (*str == '-' || *str == '+')
 	{
-		sign = -1;
+		if (*str == '-')
+			sign = -1;
+		if (*str == '+')
+			sign = 1;
 		str = str + 1;
 	}
-	if (*str == '+')
-		str = str + 1;
 	i = 0;
 	value = 0;
 	while (str[i] != '\0' && ('0' <= str[i] && str[i] <= '9'))

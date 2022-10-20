@@ -6,26 +6,24 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 15:17:15 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/14 22:01:12 by sawang           ###   ########.fr       */
+/*   Updated: 2022/10/20 13:36:02 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+// #include <stdio.h>
+// #include <string.h>
 
-
-unsigned long	ft_strlcat(char *dst, const char *src, unsigned long dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	unsigned long	dstlen;
-	unsigned long	srclen;
-	unsigned long	i;
+	size_t	dstlen;
+	size_t	srclen;
+	size_t	i;
 
-	dstlen = 0;
-	srclen = 0;
 	i = 0;
-	while (dst[dstlen] != '\0')
-		dstlen++;
-	while (src[srclen] != '\0')
-		srclen++;
-	if (dstsize != 0 && dstlen <= dstsize)
+	dstlen = ft_strlen(dst);
+	srclen = ft_strlen(src);
+	if (dstsize != 0 && dstlen < dstsize)
 	{
 		while (src[i] != '\0' && i < (dstsize - dstlen - 1))
 		{
@@ -38,5 +36,11 @@ unsigned long	ft_strlcat(char *dst, const char *src, unsigned long dstsize)
 	return (dstsize + srclen);
 }
 
-//size_t	strlcat(char * restrict dst, const char * restrict src, size_t dstsize)
-//what is restrict??
+// int main(void)
+// {
+// 	char dest[30]; memset(dest, 0, 30);
+// 	char * src = (char *)"AAAAAAAAA";
+
+// 	dest[0] = 'B';
+// 	ft_strlcat(dest, src, 1);
+// }

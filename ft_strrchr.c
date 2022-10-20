@@ -6,36 +6,32 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:08:23 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/12 11:52:35 by sawang           ###   ########.fr       */
+/*   Updated: 2022/10/18 16:51:48 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	i;
+#include "libft.h"
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
+size_t	ft_strlen(const char *str);
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
-	int	s_len;
+	int		i;
+	int		s_len;
+	char	*str;
 
+	str = (char *)s;
 	s_len = 0;
-	while (s[s_len] != '\0')
+	while (str[s_len] != '\0')
 		s_len++;
 	if (c == 0)
-		return (s + s_len);
+		return (&str[s_len]);
 	i = 0;
 	while (s[i] != '\0' && i < s_len)
 	{
-		if (c == s[s_len - 1 - i] - 48)
+		if (str[s_len - 1 - i] == (char) c)
 		{
-			return (s + s_len - 1 - i);
+			return (&str[s_len - 1 - i]);
 		}
 		i++;
 	}

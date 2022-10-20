@@ -6,16 +6,18 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 18:51:38 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/13 20:17:55 by sawang           ###   ########.fr       */
+/*   Updated: 2022/10/18 16:53:11 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, unsigned long n)
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned long	i;
+	size_t			i;
 	unsigned char	*c;
 
-	*c = s;
+	c = (unsigned char *)s;
 	i = 0;
 	while (s && i < n)
 	{

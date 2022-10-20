@@ -6,13 +6,15 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 16:47:47 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/11 16:51:00 by sawang           ###   ########.fr       */
+/*   Updated: 2022/10/18 18:51:23 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isprint(int c)
 {
-	if (c >= 32 && c <= 127)
+	if (c >= 32 && c <= 126)
 		return (1);
 	else
 		return (0);

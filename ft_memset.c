@@ -6,21 +6,23 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:29:21 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/13 20:32:34 by sawang           ###   ########.fr       */
+/*   Updated: 2022/10/18 16:54:24 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *b, int c, unsigned long len)
+#include "libft.h"
+
+void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned long	i;
+	size_t			i;
 	unsigned char	*bc;
 
-	*bc = b;
+	bc = (unsigned char *) b;
 	i = 0;
-	while (b && i < len)
+	while (bc && i < len)
 	{
-		bc[i] = c + 48;
+		bc[i] = (unsigned char) c;
 		i++;
 	}
-	return (b);
+	return (bc);
 }
