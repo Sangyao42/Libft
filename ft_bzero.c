@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 18:51:38 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/18 16:53:11 by sawang           ###   ########.fr       */
+/*   Created: 2022/10/21 20:33:40 by sawang            #+#    #+#             */
+/*   Updated: 2022/10/21 20:33:43 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_bzero(void *s, size_t n)
 
 	c = (unsigned char *)s;
 	i = 0;
-	while (s && i < n)
+	while (i < n)
 	{
 		c[i] = '\0';
 		i++;

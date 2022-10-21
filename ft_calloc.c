@@ -6,13 +6,13 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 21:43:47 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/20 13:34:55 by sawang           ###   ########.fr       */
+/*   Updated: 2022/10/21 22:19:07 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
+// #include <stdio.h>
+// #include <string.h>
 
 // void    *ft_calloc(size_t count, size_t size)
 // {
@@ -32,18 +32,21 @@ void	*ft_calloc(size_t count, size_t size)
 	char	*mem;
 	size_t	i;
 
-	if (count == 0 || size == 0 || count > SIZE_MAX / size)
+	if (count > SIZE_MAX / size)
 		return (NULL);
 	else
 	{
 		mem = malloc(count * size);
-		i = 0;
-		while (i < (count * size))
+		if (mem)
 		{
-			mem[i] = 0;
-			i++;
+			i = 0;
+			while (i < (count * size))
+			{
+				mem[i] = 0;
+				i++;
+			}
+			return (mem);
 		}
-		return (mem);
 	}
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 17:32:39 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/18 18:12:18 by sawang           ###   ########.fr       */
+/*   Updated: 2022/10/21 20:28:26 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	c_dst = (char *)dst;
 	c_src = (char *)src;
+	if (!dst && !src)
+		return (NULL);
 	i = 0;
 	while (i < n)
 	{
