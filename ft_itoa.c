@@ -1,35 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 18:18:06 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/24 13:10:01 by sawang           ###   ########.fr       */
+/*   Created: 2022/10/24 18:52:30 by sawang            #+#    #+#             */
+/*   Updated: 2022/10/24 20:59:59 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+static int int_len(int n)
 {
-	size_t	i;
-	size_t	s_len;
+	int len;
+
+	len = 0;
+	while (n)
+	{
+		n = n \ 10;
+		len++;
+	}
+	return (len);
+}
+
+char *ft_itoa(int n)
+{
+	int		len;
 	char	*str;
 
-	str = (char *)s;
-	s_len = ft_strlen(str);
-	if (c == 0)
-		return (&str[s_len]);
-	i = 0;
-	while (str[i] != '\0' && i < s_len)
+	if (n == 0)
+		len = 1;
+	else
+		len = int_len(n);
+	if (n < 0)
+		len++;
+	str = (char *)malloc(sizeof(char) *(len + 1));
+	if (!str)
+		return (NULL);
+	str[len] = '\0';
+	while (len > 0)
 	{
-		if (str[i] == (char) c)
-		{
-			return (&str[i]);
-		}
-		i++;
+		str[len - 1] = n % 10;
+		n = n / 10;
+		len--;
 	}
-	return (NULL);
+	return (str);
 }

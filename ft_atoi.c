@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:00:54 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/19 18:37:03 by sawang           ###   ########.fr       */
+/*   Updated: 2022/10/24 20:45:44 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,8 @@ int	is_non_space(const char c)
 
 int	ft_atoi(const char *str)
 {
-	int	sign;
-	int	value;
-	int	i;
+	int		sign;
+	long	value;
 
 	sign = 1;
 	while (is_non_space(*str) == 1)
@@ -41,17 +40,21 @@ int	ft_atoi(const char *str)
 	{
 		if (*str == '-')
 			sign = -1;
-		if (*str == '+')
-			sign = 1;
 		str = str + 1;
 	}
-	i = 0;
 	value = 0;
-	while (str[i] != '\0' && ('0' <= str[i] && str[i] <= '9'))
+	while (*str != '\0' && ('0' <= *str && *str <= '9'))
 	{
 		value = 10 * value;
-		value = value + str[i] - 48;
-		i++;
+		value = value + (*str - '0');
+		// if (value < 0 && sign == -1)
+		// 	return (0);
+		// else if (value < 0 && sign == 1)
+		// 	return (-1);
+		str++;
 	}
-	return (value * sign);
+	return ((int) value * sign);
 }
+// 2147483640 + 8 = -2147483648
+// -2147483648	* -1 = int 2147483648 = -2147483648
+// 2147483647 -2147483648	-2147483647
