@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 18:18:06 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/24 13:10:01 by sawang           ###   ########.fr       */
+/*   Updated: 2022/10/28 16:53:32 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strchr(const char *s, int c)
 
 	str = (char *)s;
 	s_len = ft_strlen(str);
-	if (c == 0)
+	if ((char) c == 0)
 		return (&str[s_len]);
 	i = 0;
 	while (str[i] != '\0' && i < s_len)
