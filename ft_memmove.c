@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 11:48:05 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/21 23:06:48 by sawang           ###   ########.fr       */
+/*   Updated: 2022/10/28 12:46:21 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 // 	char *src = dst + 4;
 // 	//src = dst +4;
 
-// 	// printf("this is rst : %s\n", src);
-// 	// printf("this is rst : %s\n", dst);
-//  	// memmove(dst, src,11);
-// 	// printf("this is rst : %s\n", dst);
+// 	printf("this is src : %s\n", src);
+// 	printf("this is dst : %s\n", dst);
+// 	memmove(dst, src,11);
+// 	printf("this is rst : %s\n", dst);
 
 // 	ft_memmove(dst, src, -1);
-// 	printf("this is my_rst: %s\n", dst);
+//	printf("this is my_rst: %s\n", dst);
 // }
