@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 19:34:38 by sawang            #+#    #+#             */
-/*   Updated: 2022/11/02 13:49:47 by sawang           ###   ########.fr       */
+/*   Updated: 2022/11/02 14:08:31 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		new_node = new_node->next;
 		lst = lst->next;
 	}
-	new_lst->next = NULL;
+	new_node->next = NULL;
 	return (new_lst);
 }
