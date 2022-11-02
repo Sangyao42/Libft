@@ -6,12 +6,15 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 12:15:31 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/24 19:44:31 by sawang           ###   ########.fr       */
+/*   Updated: 2022/11/02 17:47:32 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief	Check if c is one character specified in the set.
+*/
 static int	char_in_set(char c, const char *set)
 {
 	int	i;
@@ -26,6 +29,13 @@ static int	char_in_set(char c, const char *set)
 	return (0);
 }
 
+/**
+ * @brief	Allocates (with malloc(3)) and returns a copy of ’s1’
+ * with the characters specified in ’set’ removed
+ * from the beginning and the end of the string.
+ * @details	Use function ft_substr for creating the trimmed string.
+ * @return	The trimmed string. NULL if the allocation fails.
+*/
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;

@@ -6,13 +6,13 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:00:54 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/25 15:32:50 by sawang           ###   ########.fr       */
+/*   Updated: 2022/11/02 17:56:45 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_non_space(const char c)
+static int	is_non_space(const char c)
 {
 	int		i;
 	char	*space;
@@ -28,6 +28,15 @@ int	is_non_space(const char c)
 	return (0);
 }
 
+/**
+ * @brief	The atoi() function converts the initial portion of the string
+ * pointed to by str to int representation.
+ * @details	set long value to avoid int overflow.
+ * set long long value to avoid long overflow.
+ * if long value overflows LONG_MIN, the original atoi() returns 0;
+ * if long value overflows LONG_MAX, the original atoi() returns -1.
+ * @return	The integer from str.
+*/
 int	ft_atoi(const char *str)
 {
 	int			sign;

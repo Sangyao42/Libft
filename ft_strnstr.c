@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:17:47 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/22 17:58:43 by sawang           ###   ########.fr       */
+/*   Updated: 2022/11/02 22:03:01 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	j;
 
 	i = 0;
-	j = 0;
 	if (needle[0] == '\0')
 		return ((char *)haystack);
 	if (len == 0)

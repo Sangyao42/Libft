@@ -6,12 +6,18 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 18:18:06 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/28 16:53:32 by sawang           ###   ########.fr       */
+/*   Updated: 2022/11/02 15:46:36 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief The strchr() function locates the first occurrence of
+ * c (converted to a char) in the string pointed to by s.
+ * The terminating null character is considered to be part of the string;
+ * therefore if c is `\0', the functions locate the terminating `\0'.
+*/
 char	*ft_strchr(const char *s, int c)
 {
 	size_t	i;

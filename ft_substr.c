@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 09:54:44 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/28 16:13:15 by sawang           ###   ########.fr       */
+/*   Updated: 2022/11/02 21:25:16 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,20 @@
 // 	return (NULL);
 // }
 
+/**
+ * @brief	Allocates (with malloc(3)) and returns a substring from the string ’s’.
+ * The substring begins at index ’start’ and is of maximum size ’len’.
+ * @param s: The string from which to create the substring.
+ * @param start: The start index of the substring in the string ’s’.
+ * @param len: The maximum length of the substring.
+ * @details Need to consider if the start is larger than the string length,
+ * or start+len is larger than the string length,
+ * which means substring is from start to s_len,
+ * or the substring to create with len is smaller than s_len,
+ * which means substring is up to len.
+ * Need to malloc differnt size of memory for these three circumstances.
+  * @return	The substring. NULL if the allocation fails.
+*/
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
@@ -45,7 +59,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	s_len = ft_strlen(s);
-	if ((size_t)start > s_len - 1)
+	if ((size_t)start > s_len)
 		return (ft_strdup(""));
 	if ((size_t)start + len > s_len)
 		substr = (char *)malloc(s_len - (size_t)start + 1);

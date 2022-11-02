@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 21:43:47 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/28 16:07:37 by sawang           ###   ########.fr       */
+/*   Updated: 2022/11/02 21:31:01 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,12 @@
 // #include <stdio.h>
 // #include <string.h>
 
-// void    *ft_calloc(size_t count, size_t size)
-// {
-//     char    *result;
-//     if ((count == 0 && size == 0) || (count == SIZE_MAX && size == SIZE_MAX))
-//         return (NULL);
-//     else
-//     {
-//         result = malloc(count * size);
-//         ft_bzero(result, count * size);
-//         return (result);
-//     }
-// }
-
 /**
  * @brief	The calloc() function contiguously allocates
  * enough space for count objects that are
  * size bytes of memory each and returns a pointer to the allocated memory.
  * The allocated memory is filled with bytes of value zero.
- * @param	 if count or size is 0, returns either NULL,
+ * @param	if count or size is 0, returns either NULL,
  * or a unique pointer value that can later be successfully passed to free().
 */
 void	*ft_calloc(size_t count, size_t size)
@@ -40,12 +27,7 @@ void	*ft_calloc(size_t count, size_t size)
 	char	*mem;
 	size_t	i;
 
-	if (!count || !size)
-	{
-		count = 1;
-		size = 1;
-	}
-	if (count > SIZE_MAX / size)
+	if (size && count > SIZE_MAX / size)
 		return (NULL);
 	mem = malloc(count * size);
 	if (mem)

@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 16:26:39 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/29 17:25:14 by sawang           ###   ########.fr       */
+/*   Updated: 2022/11/02 20:20:14 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*current;
 
-	if (!new)
+	if (!new || !lst)
 		return ;
 	if (!*lst)
 		*lst = new;
