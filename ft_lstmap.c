@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 19:34:38 by sawang            #+#    #+#             */
-/*   Updated: 2022/10/29 21:22:35 by sawang           ###   ########.fr       */
+/*   Updated: 2022/11/02 13:49:47 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_lst;
 	t_list	*new_node;
 
-	if (!lst || !f)
+	if (!lst || !f || !del)
 		return (NULL);
 	new_node = ft_lstnew(f(lst->content));
 	if (!new_node)
@@ -35,5 +35,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		new_node = new_node->next;
 		lst = lst->next;
 	}
+	new_lst->next = NULL;
 	return (new_lst);
 }
