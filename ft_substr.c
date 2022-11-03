@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 09:54:44 by sawang            #+#    #+#             */
-/*   Updated: 2022/11/03 17:30:41 by sawang           ###   ########.fr       */
+/*   Updated: 2022/11/03 17:54:05 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,12 @@
  * @param start: The start index of the substring in the string ’s’.
  * @param len: The maximum length of the substring.
  * @details Need to consider if the start is larger than the string length,
- * or start+len is larger than the string length,
- * which means substring is from start to s_len,
- * or the substring to create with len is smaller than s_len,
- * which means substring is up to len.
+ * or len is larger than the string length,
+ * which means the maximum length of substring equals to s_len,
+ * or for the substring to create allocate len + 1 memory,
+ * which means substring is up to len and covers the rest testcases.
  * Need to malloc differnt size of memory for these three circumstances.
+ * In the third case, we malloc more than what we need for the substr.
   * @return	The substring. NULL if the allocation fails.
 */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
