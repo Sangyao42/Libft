@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 12:15:31 by sawang            #+#    #+#             */
-/*   Updated: 2022/11/02 17:47:32 by sawang           ###   ########.fr       */
+/*   Updated: 2022/11/10 18:09:51 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ static int	char_in_set(char c, const char *set)
  * from the beginning and the end of the string.
  * @details	Use function ft_substr for creating the trimmed string.
  * @return	The trimmed string. NULL if the allocation fails.
+ @set s1: string
+ @set set: list characters to be trimmed
+*/
+/**
+ *
 */
 char	*ft_strtrim(char const *s1, char const *set)
 {
